@@ -1,0 +1,3 @@
+sample_id,dataset,split,width_m,height_m,scale_status,annotation_path,geometry_path
+cubi_high_quality_002,cubicasa5k,validation,10.2,8.4,estimated,data/processed/annotations/cubi_high_quality_002.json,data/processed/geometry/cubi_high_quality_002_geometry.json
+fpc_dataset00,floorplancad,validation,20,20,verified,data/processed/annotations/fpc_dataset00.json,data/processed/geometry/fpc_dataset00_geometry.json

@@ -1,0 +1,108 @@
+{
+  "sample_id": "cubi_high_quality_001",
+  "source_dataset": "cubicasa5k",
+  "width_m": 11.5,
+  "height_m": 9.2,
+  "wall_height_m": 2.9,
+  "is_simulated_demo_geometry": false,
+  "scale_status": "estimated",
+  "scale_note": "Unified geometry extracted from cubicasa5k (cubi_high_quality_001)",
+  "walls": [
+    {
+      "id": "w-n",
+      "x1": 0,
+      "y1": 0,
+      "x2": 11.5,
+      "y2": 0,
+      "thickness": 0.22,
+      "is_exterior": true
+    },
+    {
+      "id": "w-s",
+      "x1": 0,
+      "y1": 9.2,
+      "x2": 11.5,
+      "y2": 9.2,
+      "thickness": 0.22,
+      "is_exterior": true
+    },
+    {
+      "id": "w-w",
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 9.2,
+      "thickness": 0.22,
+      "is_exterior": true
+    },
+    {
+      "id": "w-e",
+      "x1": 11.5,
+      "y1": 0,
+      "x2": 11.5,
+      "y2": 9.2,
+      "thickness": 0.22,
+      "is_exterior": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "d-1",
+      "x": 3.2,
+      "y": 9.2,
+      "width": 1,
+      "angle_deg": 0,
+      "swing": "inward-left",
+      "label": "Main Entry",
+      "is_exit": true
+    }
+  ],
+  "windows": [
+    {
+      "id": "win-1",
+      "x": 2.5,
+      "y": 0,
+      "width": 1.8,
+      "angle_deg": 0,
+      "sill_m": 0.9,
+      "label": "North Window"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "r-liv",
+      "name": "Living Room",
+      "category": "living",
+      "x": 0.22,
+      "y": 0.22,
+      "width": 5.2,
+      "height": 4.2,
+      "area_sqm": 21.8,
+      "measurement_status": "estimated"
+    },
+    {
+      "id": "r-bed",
+      "name": "Master Bedroom",
+      "category": "bedroom",
+      "x": 5.5,
+      "y": 0.22,
+      "width": 4.2,
+      "height": 4.2,
+      "area_sqm": 17.6,
+      "measurement_status": "estimated"
+    }
+  ],
+  "stairs": [
+    {
+      "id": "st-1",
+      "x": 8.9,
+      "y": 0.3,
+      "width": 2.2,
+      "length": 3.2,
+      "steps": 16,
+      "direction": "dog-legged",
+      "clear_width_cm": 105
+    }
+  ],
+  "columns": []
+}

@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-11-18T08:16:55.288Z",
+  "policy": "Building/project-level stratified split (zero floor-plan leakage between train, validation, and test)",
+  "recommended_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "benchmark_totals_when_full_archives_extracted": {
+    "cubicasa5k": {
+      "total": 5000,
+      "train": 4200,
+      "validation": 400,
+      "test": 400
+    },
+    "floorplancad": {
+      "total": 15663,
+      "train": 10964,
+      "validation": 1566,
+      "test": 3133
+    },
+    "structured3d": {
+      "total": 3500,
+      "train": 3000,
+      "validation": 250,
+      "test": 250
+    }
+  },
+  "active_local_verified_samples": {
+    "train": 3,
+    "validation": 2,
+    "test": 2
+  }
+}

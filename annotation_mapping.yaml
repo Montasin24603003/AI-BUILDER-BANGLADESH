@@ -1,0 +1,159 @@
+# PlanCheck AI — Unified Annotation Mapping Specification
+# Version: 1.0.0
+# Policy: Never invent labels when a source dataset lacks a class. Unmapped or absent classes are explicitly marked null.
+
+unified_schema_version: "1.0.0"
+preserve_original_annotations: true
+
+target_classes:
+  0: background
+  1: wall
+  2: door
+  3: window
+  4: room
+  5: staircase
+  6: column
+  7: bathroom
+  8: kitchen
+  9: bedroom
+  10: living_room
+  11: corridor
+
+dataset_mappings:
+  cubicasa5k:
+    source_reference: "data/raw/cubicasa5k/house.py (all_rooms: 64 classes, all_icons: 51 classes)"
+    annotation_format: "SVG Polygons (<g class='Wall|Space|Window|Door|FixedFurniture'>)"
+    missing_target_classes:
+      - column # CubiCasa5K does not annotate structural RCC columns separately from Wall polygons
+    class_map:
+      wall:
+        source_rooms: ["Wall"]
+        source_ids: [62]
+      door:
+        source_icons: ["Door"]
+        source_icon_ids: [2]
+      window:
+        source_icons: ["Window"]
+        source_icon_ids: [1]
+      staircase:
+        source_rooms: ["StairWell", "Stairs"]
+        source_ids: [53, 64]
+      column: null # Not present in CubiCasa5K; do not fabricate
+      bathroom:
+        source_rooms: ["Bath", "Sauna"]
+        source_ids: [6, 47]
+      kitchen:
+        source_rooms: ["Kitchen"]
+        source_ids: [29]
+      bedroom:
+        source_rooms: ["Bedroom"]
+        source_ids: [7]
+      living_room:
+        source_rooms: ["LivingRoom", "Lounge"]
+        source_ids: [31, 33]
+      corridor:
+        source_rooms: ["HallWay", "DraughtLobby", "Entry", "Hall"]
+        source_ids: [27, 17, 22, 26]
+      room:
+        # Generic habitable/auxiliary spaces mapped to general 'room' while preserving original subtype in metadata
+        source_rooms:
+          - "Room"
+          - "Dining"
+          - "EatingArea"
+          - "Office"
+          - "Den"
+          - "Library"
+          - "MediaRoom"
+          - "Closet"
+          - "DressingRoom"
+          - "Storage"
+          - "Utility"
+          - "Pantry"
+        source_ids: [45, 16, 19, 38, 15, 30, 34, 11, 18, 54, 61, 41]
+    unmapped_preserved_as_metadata:
+      - "Outdoor"
+      - "CarPort"
+      - "Garage"
+      - "Railing"
+      - "Elevator"
+
+  floorplancad:
+    source_reference: "data/raw/floorplancad/classes-page.html (28 Thing classes + 2 Stuff classes)"
+    annotation_format: "SVG Line-grained Panoptic Primitives (stroke-labeled paths)"
+    missing_target_classes:
+      - bathroom # FloorPlanCAD annotates sanitary fixtures (toilet, sink, bathtub) as things, not enclosed room polygons
+      - kitchen  # Annotated via gas_stove/sink symbols rather than closed room polygon
+      - bedroom  # Annotated via bed/wardrobe symbols rather than closed room polygon
+      - living_room # Annotated via sofa/table symbols rather than closed room polygon
+      - corridor
+      - room
+    class_map:
+      wall:
+        source_stuff: ["wall", "curtain_wall"]
+      door:
+        source_things: ["single_door", "double_door", "sliding_door", "folding_door", "revolving_door", "rolling_door"]
+      window:
+        source_things: ["window", "bay_window", "blind_window", "opening_symbol"]
+      staircase:
+        source_things: ["stair", "escalator"]
+      column:
+        source_things: ["column", "pillar"] # Where explicitly tagged in CAD layer; otherwise null
+      bathroom: null
+      kitchen: null
+      bedroom: null
+      living_room: null
+      corridor: null
+      room: null
+    auxiliary_symbol_preserved:
+      - "elevator"
+      - "parking"
+      - "railing"
+      - "toilet"
+      - "sink"
+      - "bathtub"
+      - "gas_stove"
+
+  structured3d:
+    source_reference: "data/raw/structured3d/README.md (3,500 3D house scenes)"
+    annotation_format: "annotation_3d.json (junctions, lines, planes, semantics, cuboids)"
+    missing_target_classes:
+      - column
+    class_map:
+      wall:
+        source_semantics: ["wall"]
+      door:
+        source_semantics: ["door"]
+      window:
+        source_semantics: ["window"]
+      staircase:
+        source_semantics: ["stairs"]
+      column: null
+      bathroom:
+        source_room_types: ["bathroom", "toilet"]
+      kitchen:
+        source_room_types: ["kitchen"]
+      bedroom:
+        source_room_types: ["bedroom", "master room", "child room"]
+      living_room:
+        source_room_types: ["living room"]
+      corridor:
+        source_room_types: ["corridor", "entrance", "hallway"]
+      room:
+        source_room_types: ["dining room", "study", "storage", "cloakroom", "other"]
+
+  bangladesh_drawings:
+    source_reference: "PlanCheck AI Bangladesh Permissioned CAD & FloorPlanGeometry Schema"
+    annotation_format: "PlanCheck Unified JSON (walls, doors, windows, rooms, stairs, columns)"
+    missing_target_classes: []
+    class_map:
+      wall: ["walls"]
+      door: ["doors"]
+      window: ["windows"]
+      staircase: ["stairs", "staircase"]
+      column: ["columns"]
+      bathroom: ["rooms[category=bathroom]"]
+      kitchen: ["rooms[category=kitchen]"]
+      bedroom: ["rooms[category=bedroom]"]
+      living_room: ["rooms[category=living]"]
+      corridor: ["rooms[category=corridor]"]
+      room: ["rooms[category=other]"]

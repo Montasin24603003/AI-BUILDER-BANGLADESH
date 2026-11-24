@@ -1,0 +1,33 @@
+{
+  "sample_id": "bd_dhaka_2br_001",
+  "dataset": "bangladesh_drawings",
+  "split": "train",
+  "width_m": 12.4,
+  "height_m": 8.8,
+  "scale_status": "verified",
+  "classes_present": [
+    "wall",
+    "door",
+    "window",
+    "staircase",
+    "column",
+    "bathroom",
+    "kitchen",
+    "bedroom",
+    "living_room",
+    "corridor"
+  ],
+  "missing_classes": [],
+  "counts": {
+    "wall": 10,
+    "door": 6,
+    "window": 5,
+    "staircase": 1,
+    "column": 9,
+    "bathroom": 2,
+    "kitchen": 1,
+    "bedroom": 2,
+    "living_room": 1,
+    "corridor": 1
+  }
+}

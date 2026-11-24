@@ -1,0 +1,28 @@
+{
+  "sample_id": "fpc_teaser01",
+  "source_dataset": "FloorPlanCAD",
+  "source_file": "data/raw/floorplancad/teaser01.svg",
+  "viewBox": "0 0 255.105 255.118",
+  "primitives": {
+    "paths": 65,
+    "lines": 0,
+    "polygons": 0,
+    "arcs_circles": 0,
+    "total_primitives": 65
+  },
+  "missing_target_classes": [
+    "bathroom",
+    "kitchen",
+    "bedroom",
+    "living_room",
+    "corridor",
+    "room"
+  ],
+  "preserved_classes": [
+    "wall",
+    "door",
+    "window",
+    "staircase",
+    "column"
+  ]
+}

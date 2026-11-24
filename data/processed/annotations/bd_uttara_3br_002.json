@@ -1,0 +1,33 @@
+{
+  "sample_id": "bd_uttara_3br_002",
+  "dataset": "bangladesh_drawings",
+  "split": "train",
+  "width_m": 13.8,
+  "height_m": 11.2,
+  "scale_status": "verified",
+  "classes_present": [
+    "wall",
+    "door",
+    "window",
+    "staircase",
+    "column",
+    "bathroom",
+    "kitchen",
+    "bedroom",
+    "living_room",
+    "corridor"
+  ],
+  "missing_classes": [],
+  "counts": {
+    "wall": 14,
+    "door": 8,
+    "window": 7,
+    "staircase": 1,
+    "column": 12,
+    "bathroom": 3,
+    "kitchen": 1,
+    "bedroom": 3,
+    "living_room": 1,
+    "corridor": 1
+  }
+}

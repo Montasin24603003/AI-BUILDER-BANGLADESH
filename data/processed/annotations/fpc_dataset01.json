@@ -1,0 +1,35 @@
+{
+  "sample_id": "fpc_dataset01",
+  "dataset": "floorplancad",
+  "split": "test",
+  "width_m": 20,
+  "height_m": 20,
+  "scale_status": "verified",
+  "classes_present": [
+    "wall",
+    "door",
+    "window",
+    "staircase",
+    "column"
+  ],
+  "missing_classes": [
+    "bathroom",
+    "kitchen",
+    "bedroom",
+    "living_room",
+    "corridor",
+    "room"
+  ],
+  "counts": {
+    "wall": 22,
+    "door": 12,
+    "window": 14,
+    "staircase": 2,
+    "column": 8,
+    "bathroom": null,
+    "kitchen": null,
+    "bedroom": null,
+    "living_room": null,
+    "corridor": null
+  }
+}

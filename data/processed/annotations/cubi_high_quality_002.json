@@ -1,0 +1,34 @@
+{
+  "sample_id": "cubi_high_quality_002",
+  "dataset": "cubicasa5k",
+  "split": "validation",
+  "width_m": 10.2,
+  "height_m": 8.4,
+  "scale_status": "estimated",
+  "classes_present": [
+    "wall",
+    "door",
+    "window",
+    "bathroom",
+    "kitchen",
+    "bedroom",
+    "living_room",
+    "corridor"
+  ],
+  "missing_classes": [
+    "column",
+    "staircase"
+  ],
+  "counts": {
+    "wall": 9,
+    "door": 5,
+    "window": 4,
+    "staircase": 0,
+    "column": null,
+    "bathroom": 1,
+    "kitchen": 1,
+    "bedroom": 2,
+    "living_room": 1,
+    "corridor": 1
+  }
+}

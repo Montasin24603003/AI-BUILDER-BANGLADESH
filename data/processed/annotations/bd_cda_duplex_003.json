@@ -1,0 +1,33 @@
+{
+  "sample_id": "bd_cda_duplex_003",
+  "dataset": "bangladesh_drawings",
+  "split": "test",
+  "width_m": 14.5,
+  "height_m": 10.6,
+  "scale_status": "verified",
+  "classes_present": [
+    "wall",
+    "door",
+    "window",
+    "staircase",
+    "column",
+    "bathroom",
+    "kitchen",
+    "bedroom",
+    "living_room",
+    "corridor"
+  ],
+  "missing_classes": [],
+  "counts": {
+    "wall": 15,
+    "door": 9,
+    "window": 8,
+    "staircase": 1,
+    "column": 12,
+    "bathroom": 3,
+    "kitchen": 1,
+    "bedroom": 3,
+    "living_room": 1,
+    "corridor": 1
+  }
+}

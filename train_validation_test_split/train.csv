@@ -1,0 +1,4 @@
+sample_id,dataset,split,width_m,height_m,scale_status,annotation_path,geometry_path
+bd_dhaka_2br_001,bangladesh_drawings,train,12.4,8.8,verified,data/processed/annotations/bd_dhaka_2br_001.json,data/processed/geometry/bd_dhaka_2br_001_geometry.json
+bd_uttara_3br_002,bangladesh_drawings,train,13.8,11.2,verified,data/processed/annotations/bd_uttara_3br_002.json,data/processed/geometry/bd_uttara_3br_002_geometry.json
+cubi_high_quality_001,cubicasa5k,train,11.5,9.2,estimated,data/processed/annotations/cubi_high_quality_001.json,data/processed/geometry/cubi_high_quality_001_geometry.json
